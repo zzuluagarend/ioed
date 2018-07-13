@@ -391,13 +391,15 @@ var mainHD = {
         // event listener for buttons; when an input is selected, the response
 		// and additional information are stored in exp.trial_info
         $('#next').on('click', function() {
-            RT = Date.now() - startingTime; // measure RT before anything else
-            trial_data = {
+            exp.global_data.RT = Date.now() - startingTime; // measure RT before anything else
+            exp.global_data.expl = question_HD[0];
+			exp.global_data.explanation = $('#explanationHD').val().trim();			
+			trialHD_data = {
 				exp1: question_HD[0],
 				explanation: $('#explanationHD').val().trim(),
                 RT: RT
             };
-            exp.trial_data.push(trial_data);
+            exp.trial_data.push(trialHD_data);
             exp.findNextView();
         });
 		
@@ -428,13 +430,13 @@ var postHD = {
 	});
 	
 	$('#next').on('click', function(e) {
-            trial_data = {
+            trialHD_data = {
                 trial_type: "main",
                 q1: q1,
 				answer1: answer1,
 				};
 			
-			exp.trial_data.push(trial_data);
+			exp.trial_data.push(trialHD_data);
             exp.findNextView();
         });
     }
@@ -467,7 +469,8 @@ var mainLD = {
 		// and additional information are stored in exp.trial_info
         $('#next').on('click', function() {
             RT = Date.now() - startingTime; // measure RT before anything else
-            trial_data = {
+            exp.trial_data.
+			trial_data = {
 				exp12: question_LD[0],
 				explanation: $('#explanationHD').val().trim(),
                 RT: RT
@@ -504,13 +507,13 @@ var postLD = {
 	});
 	
 	$('#next').on('click', function(e) {
-            trial_data = {
-                trial_type: "main",
-                q1: q1,
-				answer1: answer1,
+            trialLD_data = {
+                exp_type: "main",
+                qL1: q1,
+				answerL1: answer1,
 				};
 			
-			exp.trial_data.push(trial_data);
+			exp.trial_data.push(trialLD_data);
             exp.findNextView();
         });
     }
