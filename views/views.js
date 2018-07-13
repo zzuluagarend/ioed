@@ -257,18 +257,18 @@ var survey = {
 			 q12 : questions[11],
 			 
          }));
-		var q1;
-		var q2;
-		var q3;
-		var q4;
-		var q5;
-		var q6;
-		var q7;
-		var q8;
-		var q9;
-		var q10;
-		var q11;
-		var q12;
+		// var q1;
+		// var q2;
+		// var q3;
+		// var q4;
+		// var q5;
+		// var q6;
+		// var q7;
+		// var q8;
+		// var q9;
+		// var q10;
+		// var q11;
+		// var q12;
 		
 		$('input:radio').click(function() {
 		q1 = questions[0]
@@ -295,13 +295,12 @@ var survey = {
 		answer11 = $('input:radio[name=q11]:checked').val();
 		q12 = questions[11]
 		answer12 = $('input:radio[name=q12]:checked').val();
-		
 				
 	});
 	
 	$('#next').on('click', function(e) {
             trial_data = {
-                trial_type: "main",
+                trial_type: "pre_rating",
                 q1: q1,
 				answer1: answer1,
 				q2: q2,
@@ -338,7 +337,7 @@ var survey = {
 var beginExp = {
     "title": "Write Explanations",
     // instruction's text
-    "text": "Now, we'd like to probe your knowledge in a little more detail, on some of the items.",
+    "text": "Now, I'd like to probe your knowledge in a little more detail, on some of the items.",
 	"text1": "For each of the following, please describe all the details you know about the phenomena, going from the first step to the last, and providing the causal connection between the steps.  That is, your explanation should state precisely how each step causes the next step in one continuous chain from start to finish. In other words, for each phenomenon, try to tell as complete a story as you can, with no gaps.",
 	"text2": "If you find that your story does have gaps (that is, you are not sure how the steps are connected) please write the word “GAP” in your description at that point, and then continue.",
 	"text3": "When you are done, you will re-rate your knowledge of the phenomenon on a 1-7 scale.",
@@ -382,23 +381,19 @@ var mainHD = {
 						            
         }));
 		
-		// var exp1;
-		
-		// update the progress bar
-        var filled = CT * (180 / exp.views_seq[exp.currentViewCounter].trials);
-        $('#filled').css('width', filled);
-
-        // event listener for buttons; when an input is selected, the response
+		// event listener for buttons; when an input is selected, the response
 		// and additional information are stored in exp.trial_info
         $('#next').on('click', function() {
-            exp.global_data.RT1 = Date.now() - startingTime; // measure RT before anything else
-            exp.global_data.expl_high = question_HD[0];
-			exp.global_data.explanation_high = $('#explanationHD').val().trim();			
-			trialHD_data = {
-				exp1: question_HD[0],
-				explanation: $('#explanationHD').val().trim(),
-            };
-            exp.trial_data.push(trialHD_data);
+            exp.global_data.item_HD = question_HD[0];
+			exp.global_data.explanation_high = $('#explanationHD').val().trim();
+			exp.global_data.RT1 = Date.now() - startingTime; // measure RT before anything else
+            // trial_data = {
+				// trial_type: "explanation_high",
+				// exp1: question_HD[0],
+				// explanation: $('#explanationHD').val().trim(),
+                // RT: RT
+            // };
+            // exp.trial_data.push(trial_data);
             exp.findNextView();
         });
 		
@@ -412,7 +407,7 @@ var postHD = {
 	trials: 1,	
     "title": "Post-rating",	
     render: function (CT) {
-		var question = exp.trial_data[1].exp1;
+		var question = exp.global_data.item_HD;
 		
 		// fill variables in view-template
         var viewTemplate = $('#postHD-view').html();
@@ -429,14 +424,14 @@ var postHD = {
 	});
 	
 	$('#next').on('click', function(e) {
-            exp.global_data.q13 = q1;
-			exp.global_data.answer13 = answer1;
-			trialHD_data = {
-                q13: q1,
-				answer13: answer1,
-				};
+			exp.global_data.post_high = answer1;
+            // trial_data = {
+                // trial_type: "post_high",
+                // q1: q1,
+				// answer1: answer1,
+				// };
 			
-			exp.trial_data.push(trialHD_data);
+			// exp.trial_data.push(trial_data);
             exp.findNextView();
         });
     }
@@ -445,37 +440,33 @@ var postHD = {
 var mainLD = {
 	
 	trials : 1,
-	"title": "Explanations",
-	"reminder": "Explain as complete as possible how this phenomenon works:",
+	"title": "Explanations",	
     render : function(CT) {
 		
 		var question_LD = _.shuffle(exp.trial_info.main_trials[CT].questionLD);
 		
 		// fill variables in view-template
-        var viewTemplate = $('#mainHD-view').html();
-        $('#main').html(Mustache.render(viewTemplate, {
-            reminder: this.reminder,
+        var viewTemplate = $('#mainLD-view').html();
+        $('#main').html(Mustache.render(viewTemplate, {            
 			title: this.title,
 			exp1 : question_LD[0],
 						            
-        }));		
+        }));
 		
+		// var exp1;
 		
-		// update the progress bar
-        var filled = CT * (180 / exp.views_seq[exp.currentViewCounter].trials);
-        $('#filled').css('width', filled);
-
-        // event listener for buttons; when an input is selected, the response
+		// event listener for buttons; when an input is selected, the response
 		// and additional information are stored in exp.trial_info
-        $('#next').on('click', function() {     
-            exp.global_data.RT2 = Date.now() - startingTime; // measure RT before anything else
-            exp.global_data.expl_low = question_LD[0];
-			exp.global_data.explanation_low = $('#explanationHD').val().trim();
-			trial_data = {
-				exp12: question_LD[0],
-				explanation: $('#explanationHD').val().trim(),
-            };
-            exp.trial_data.push(trial_data);
+        $('#next').on('click', function() {
+            exp.global_data.item_LD = question_LD[0];
+			exp.global_data.explanation_low = $('#explanationLD').val().trim();
+			exp.global_data.RT1 = Date.now() - startingTime; // measure RT before anything else
+            // trial_data = {
+				// trial_type: "explanation_low",
+				// exp12: question_LD[0],
+				// explanation: $('#explanationLD').val().trim(),
+            // };
+            // exp.trial_data.push(trial_data);
             exp.findNextView();
         });
 		
@@ -490,7 +481,7 @@ var postLD = {
 	trials: 1,	
     "title": "Post-rating",	
     render: function (CT) {
-		var question = exp.trial_data[3].exp12;
+		var question = exp.global_data.item_LD;
 		
 		// fill variables in view-template
          var viewTemplate = $('#postLD-view').html();
@@ -507,14 +498,14 @@ var postLD = {
 	});
 	
 	$('#next').on('click', function(e) {
-			exp.global_data.q14 = q1;
-			exp.global_data.answer14 = answer1;
-            trialLD_data = {
-                q14: q1,
-				answer14: answer1,
-				};
+			exp.global_data.post_low = answer1;
+            // trial_data = {
+                // trial_type: "post_low",
+                // q1: q1,
+				// answer1: answer1,
+				// };
 			
-			exp.trial_data.push(trialLD_data);
+			// exp.trial_data.push(trial_data);
             exp.findNextView();
         });
     }

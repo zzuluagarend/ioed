@@ -414,9 +414,9 @@
 		<!-- main view (explanations HD response) -->
 		<script id="mainHD-view" type="x-tmpl-mustache">
 		<div class="view">
-		{{# title }}
-		<h1>{{ title }}</h1>
-		{{/ title }}
+		<!-- {{# title }} -->
+		<!-- <h1>{{ title }}</h1> -->
+		<!-- {{/ title }} -->
 		
 		<p class="question">
 		{{# exp1 }}
@@ -437,9 +437,9 @@
 		<!-- Post rate HD view -->
 		<script id="postHD-view" type="x-tmpl-mustache">
 		<div class="view">
-			{{# title }}
-			<h1>{{ title }}</h1>
-			{{/ title }}
+			<!-- {{# title }} -->
+			<!-- <h1>{{ title }}</h1> -->
+			<!-- {{/ title }} -->
 			
 		
 		<p class="question">
@@ -483,23 +483,22 @@
 		<!-- main view (explanations LD response) -->
 		<script id="mainLD-view" type="x-tmpl-mustache">
 		<div class="view">
-		<div class="progress-bar-container">
-			<p>progress</p>
-			<div class="progress-bar"><span id='filled'><span></div>
-		
+		<!-- {{# title }} -->
+		<!-- <h1>{{ title }}</h1> -->
+		<!-- {{/ title }} -->
 		
 		<p class="question">
-		{{# expl2 }}
-		{{ expl2 }}
-		{{/ expl2 }}
+		{{# exp1 }}
+		{{ exp1 }}
+		{{/ exp1 }}
 		</p>
 
-		<p class="comment-sect">
-			<label for="comments">{{# reminder }} {{ reminder }} {{/ reminder }}</label>
+		<p class="comment-sect" align="center">
+			<label for="comments"></label>
 			<textarea name="explanationLD" id="explanationLD"
 			rows="10" cols="70"></textarea>
 		</p>
-
+		
 		<button id="next">Next</button>
 		</div>
 		</script>
@@ -507,9 +506,9 @@
 		<!-- Post rate LD trial view -->
 		<script id="postLD-view" type="x-tmpl-mustache">
 		<div class="view">
-			{{# title }}
-			<h1>{{ title }}</h1>
-			{{/ title }}
+			<!-- {{# title }} -->
+			<!-- <h1>{{ title }}</h1> -->
+			<!-- {{/ title }} -->
 			
 		
 		<p class="question">
