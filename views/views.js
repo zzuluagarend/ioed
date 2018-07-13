@@ -397,7 +397,6 @@ var mainHD = {
 			trialHD_data = {
 				exp1: question_HD[0],
 				explanation: $('#explanationHD').val().trim(),
-                RT: RT
             };
             exp.trial_data.push(trialHD_data);
             exp.findNextView();
@@ -475,7 +474,6 @@ var mainLD = {
 			trial_data = {
 				exp12: question_LD[0],
 				explanation: $('#explanationHD').val().trim(),
-                RT: RT
             };
             exp.trial_data.push(trial_data);
             exp.findNextView();
