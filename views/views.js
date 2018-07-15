@@ -460,7 +460,7 @@ var mainLD = {
         $('#next').on('click', function() {
             exp.global_data.item_LD = question_LD[0];
 			exp.global_data.explanation_low = $('#explanationLD').val().trim();
-			exp.global_data.RT1 = Date.now() - startingTime; // measure RT before anything else
+			exp.global_data.RT2 = Date.now() - startingTime; // measure RT before anything else
             // trial_data = {
 				// trial_type: "explanation_low",
 				// exp12: question_LD[0],
