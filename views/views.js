@@ -184,7 +184,7 @@ var instructionSurvey1 = {
      // instruction's title
     "title": "Instructions",
     // instruction's text
-    "text": "For the crossbow, many people are probably close to a 7, such a hypothetical person who would provide the first crossbow drescription.  Others are close to a 4, such as the hypothetical person who would provide the second crossbow drescription, and some, such as a person who would provide the third crossbow drescription, are close to a 1.",
+    "text": "For the crossbow, many people are probably close to a 7, such hypothetical person would provide the first crossbow drescription. Others are close to a 4, such as the hypothetical person who would provide the second crossbow drescription, and some, such as a person who would provide the third crossbow drescription, are close to a 1.",
     // instuction proceeding button text
     "buttonText": "Next",
     render: function() {
