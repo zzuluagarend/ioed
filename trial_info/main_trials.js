@@ -1,9 +1,9 @@
 var main_trials = [
-	{questionHD: ["How high 1", 
-				"How How high 2"
+	{questionHD: ["How a zipper works", 
+				"How Healthcare system in your country works"
 				],
-	questionLD: ["How low 1", 
-				"How low 2"
+	questionLD: ["How an incinerator works", 
+				"How piano keys make sounds"
 				],
 	reminder: "Now, please rate how well you feel you understand this phenomenon.",
 	}
