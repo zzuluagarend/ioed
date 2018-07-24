@@ -184,7 +184,7 @@ var instructionSurvey1 = {
      // instruction's title
     "title": "Instructions",
     // instruction's text
-    "text": "For the crossbow, many people are probably close to a 7, such hypothetical person would provide the first crossbow drescription.  Others are close to a 4, such as the hypothetical person who would provide the second crossbow drescription, and some, such as a person who would provide the third crossbow drescription, are close to a 1.",
+    "text": "For the crossbow, many people are probably close to a 7, such a hypothetical person who would provide the first crossbow drescription.  Others are close to a 4, such as the hypothetical person who would provide the second crossbow drescription, and some, such as a person who would provide the third crossbow drescription, are close to a 1.",
     // instuction proceeding button text
     "buttonText": "Next",
     render: function() {
@@ -209,7 +209,7 @@ var instructionSurvey2 = {
      // instruction's title
     "title": "Instructions",
     // instruction's text
-    "text": "Finally, it’s very important to give your first impression.  It has be found that taking too long really hurts people’s answers. Please go through the list below as quickly as possible and click the number from 1-7 on the scale next to each phenomenon, telling how well you feel you understand each item.",
+    "text": "Finally, it’s very important to give your first impression.  It has been found that taking too long really hurts people’s answers. Please go through the list below as quickly as possible and click the number from 1-7 on the scale next to each phenomenon, telling how well you feel you understand each item.",
     // instuction proceeding button text
     "buttonText": "Go to the list",
     render: function() {
