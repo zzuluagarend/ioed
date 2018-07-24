@@ -209,7 +209,7 @@ var instructionSurvey2 = {
      // instruction's title
     "title": "Instructions",
     // instruction's text
-    "text": "Finally, it’s very important to give your first impression.  It has been found that taking too long really hurts people’s answers. Please go through the list below as quickly as possible and click the number from 1-7 on the scale next to each phenomenon, telling how well you feel you understand each item.",
+    "text": "Finally, it’s very important to give your first impression. It has been found that taking too long really hurts people’s answers. Please go through the list below as quickly as possible and click the number from 1-7 on the scale next to each phenomenon, telling how well you feel you understand each item.",
     // instuction proceeding button text
     "buttonText": "Go to the list",
     render: function() {
